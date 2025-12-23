@@ -1,0 +1,117 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import "tailwindcss";
+@config "../../../tailwind.config.js";
+
+@layer base {
+  @font-face {
+    font-family: "CALISTB";
+    font-style: normal;
+    font-display: swap;
+    src: url(../fonts/CALISTB.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Spinnaker";
+    font-style: normal;
+    font-display: swap;
+    src: url(../fonts/Spinnaker.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "WorkSans";
+    font-style: normal;
+    font-display: swap;
+    src: url(../fonts/WorkSans.woff2) format("woff2");
+  }
+
+  body {
+    font-family: "WorkSans";
+  }
+}
+:root {
+  --accent-color: #e9a310;
+}
+.pl-6 {
+  padding-left: 1.5rem;
+  /* 24px */
+}
+.pl-12 {
+  padding-left: 3rem;
+  /* 48px */
+}
+
+.upload-success {
+  background-color: #e6ffe6;
+}
+.bg-bg-default {
+  background-color: #f4f4f5;
+}
+.bg-bg-success {
+  background-color: #e8faf0;
+}
+.bg-bg-error {
+  background-color: #fee7ef;
+}
+.h-3\/5 {
+  height: 60%;
+}
+.bg-before-white {
+  position: relative;
+  border-radius: 0.5em;
+}
+.bg-before-white::before {
+  position: relative;
+  background-color: #ffffff;
+  content: attr(data-content);
+  box-shadow: 1px 1px 5px 3px rgba(244, 244, 244, 0.5);
+  padding: 0.2em 1.2em;
+  border-radius: 0.5em;
+  display: block;
+}
+
+.main-title {
+  position: relative;
+  z-index: 10;
+  padding: 0.5em 1em;
+  width: 12em;
+  /* text-align: left; */
+  background: linear-gradient(to right, #20b4de, rgba(255, 255, 255, 0));
+  border-radius: 2em;
+  display: block;
+  /*  color: var(--main-color); */
+}
+.translate-x-\[-96\] {
+  transform: translateX(-24rem);
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 1s cubic-bezier(0.92, 0.2, 0.4, 1.02) both;
+}
+.animate-fadeOutLeft {
+  animation: fadeOutLeft 0.6s cubic-bezier(0.92, 0.2, 0.4, 1.02) both;
+}
+@keyframes fadeInRight {
+  from {
+    filter: blur(2px);
+    opacity: 0;
+    transform: translateX(14rem);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeOutLeft {
+  from {
+    filter: blur(2px);
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    filter: blur(2px);
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+}
