@@ -1,4 +1,11 @@
 {
+  "build": {
+    "env": {
+      "PNPM_VERSION": "9.1.3"
+    }
+  },
+  "installCommand": "npm install -g pnpm@$PNPM_VERSION && pnpm install --registry=https://registry.npmmirror.com",
+  "buildCommand": "pnpm run build",
   "rewrites": [
     {"source": "/(.*)", "destination": "/"},
     {
