@@ -1,5 +1,13 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {"source": "/(.*)", "destination": "/"},
+    {
+      "source": "/api",
+      "destination": "https://skin-node-production.up.railway.app/*"
+    },
+    {
+      "source": "/ws",
+      "destination": "ws://skin-node-production.up.railway.app/*"
+    }
   ]
 }
