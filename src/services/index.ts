@@ -9,7 +9,7 @@ import {
   MenuType,
   MenusContentType
 } from '@/types';
-import {SearchParamsValue, OperateCode} from '@/config';
+import {SearchParamsValue, OperateCode, websocketUrl} from '@/config';
 import {Fetch, fetchAll, FetchTest} from '@/utils';
 
 export const getMenuList = async (params: SearchParamsType | null) => {
@@ -201,7 +201,7 @@ export const ItWebSocket = (
   setValue: (name: string) => void
 ) => {
   const token = useUserStore.getState().userInfo?.token ?? '',
-    socket = new WebSocket(`/ws${url}`, [token]);
+    socket = new WebSocket(`${websocketUrl}${url}`, [token]);
   socket.onopen = () => {
     sendLargeImage(new Uint8Array(images as ArrayBuffer), rest);
   };

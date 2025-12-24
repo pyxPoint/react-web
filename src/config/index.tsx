@@ -30,3 +30,4 @@ export const MenuList = new Map([
     }
   ]
 ]);
+export const websocketUrl = 'wss://skin-node-production.up.railway.app';
