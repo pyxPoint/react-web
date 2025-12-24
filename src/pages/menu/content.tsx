@@ -28,8 +28,9 @@ import useMenuStore from '@/store/menu';
 import {ShowTogglePage} from './components/showTogglePage';
 
 const SelectParents: componentType = ({className, name, setValue, id}) => {
+  const {updateListTime} = useMenuStore();
   const {isLoading, data} = useQuery({
-    queryKey: ['getMenuList'],
+    queryKey: ['getMenuList', updateListTime],
     queryFn: getMenuListContent
   });
   return (
