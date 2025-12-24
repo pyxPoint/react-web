@@ -201,7 +201,7 @@ export const ItWebSocket = (
   setValue: (name: string) => void
 ) => {
   const token = useUserStore.getState().userInfo?.token ?? '',
-    socket = new WebSocket(`${websocketUrl}${url}`, [token]);
+    socket = new WebSocket(`${websocketUrl}/ws${url}`, [token]);
   socket.onopen = () => {
     sendLargeImage(new Uint8Array(images as ArrayBuffer), rest);
   };
