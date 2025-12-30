@@ -170,14 +170,12 @@ const PageParams: componentType = ({data, isBack, operateType}) => {
                           <Controller
                             control={control}
                             name="inquiry"
-                            render={({field: {name, value, onChange, ref}, fieldState: {invalid}}) => (
+                            render={({field: {name, value, onChange, ref}}) => (
                               <Checkbox
                                 ref={ref}
                                 size="sm"
-                                isInvalid={invalid}
                                 name={name}
                                 onChange={onChange}
-                                isRequired
                                 validationBehavior="aria"
                                 defaultSelected={Boolean(value)}
                                 classNames={{icon: 'text-white'}}
@@ -185,19 +183,16 @@ const PageParams: componentType = ({data, isBack, operateType}) => {
                                 inquiry
                               </Checkbox>
                             )}
-                            rules={{required: true}}
                           />
                           <Controller
                             control={control}
                             name="fullScreen"
-                            render={({field: {name, value, onChange, ref}, fieldState: {invalid}}) => (
+                            render={({field: {name, value, onChange, ref}}) => (
                               <Checkbox
                                 ref={ref}
                                 size="sm"
-                                isInvalid={invalid}
                                 name={name}
                                 onChange={onChange}
-                                isRequired
                                 validationBehavior="aria"
                                 defaultSelected={Boolean(value)}
                                 classNames={{icon: 'text-white'}}
